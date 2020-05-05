@@ -1,0 +1,22 @@
+{
+  "name": "dockercon-integration-testing-demo-containerizing-tests",
+  "version": "1.0.0",
+  "description": "A demo for my docker con talk on integration testing using docker and compose",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/*.spec.js"
+  },
+  "keywords": [
+    "demo",
+    "docker",
+    "compose",
+    "integration",
+    "testing"
+  ],
+  "author": "Andrew Crumpler",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
+  }
+}
