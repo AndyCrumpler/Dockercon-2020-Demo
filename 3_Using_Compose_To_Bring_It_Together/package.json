@@ -1,0 +1,20 @@
+{
+  "name": "3_using_compose_to_bring_it_together",
+  "version": "1.0.0",
+  "description": "Using Docker compose to run tests and dependencies together demonstration",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --exit **/*.spec.js"
+  },
+  "author": "Andrew Crumpler",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/pubsub": "^1.7.2",
+    "mongodb": "^3.5.7"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
+    "mocha-junit-reporter": "^1.23.3"
+  }
+}
