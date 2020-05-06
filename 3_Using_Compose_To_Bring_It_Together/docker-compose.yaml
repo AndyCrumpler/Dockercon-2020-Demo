@@ -12,6 +12,13 @@ services:
     volumes:
     - ./init/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
 
+  pubsub:
+    build: 
+      context: ./
+      dockerfile: pubsub-Dockerfile
+    logging:
+      driver: none
+
   integration:
     build:
       context: ./
@@ -20,6 +27,11 @@ services:
       MONGO_CONNECTION_STRING: mongodb://user:password@mongo:27017
       DATABASE: dogs
       COLLECTION: breedsOfDog
-      WAIT_HOSTS: mongo:27017
+      DOGS_TOPIC: dogs
+      SUBSCRIPTION: animals
+      PUBSUB_EMULATOR_HOST: pubsub:8085
+      PUBSUB_PROJECT_ID: integration-tests
+      WAIT_HOSTS: mongo:27017, pubsub:8085
     depends_on: 
       - mongo
+      - pubsub

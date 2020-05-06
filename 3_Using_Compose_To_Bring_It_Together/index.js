@@ -18,7 +18,7 @@ function subscribe() {
     subscription.on('message', async message => {
         const animal = message.data.toString()
         if (await isABreedOfDog(animal)) {
-            topic.publish(message)
+            topic.publish(Buffer.from(animal))
         }
     });
 }
