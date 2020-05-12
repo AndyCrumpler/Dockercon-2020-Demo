@@ -35,3 +35,5 @@ services:
     depends_on: 
       - mongo
       - pubsub
+    volumes:
+      - "./results:/results"

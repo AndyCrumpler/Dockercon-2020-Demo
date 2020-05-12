@@ -1,0 +1,23 @@
+stages:
+- stage: run-tests
+  displayName: Run Integration run-tests
+  jobs:
+    - job: integration_test
+      displayName: Integration Tests
+      pool:
+        vmImage: 'ubuntu-latest'
+      
+        steps:
+
+        - task: DockerCompose@0
+          displayName: Run Tests with Docker DockerCompose@0
+          inputs:
+            dockerComposeFile: '3_Using_Compose_To_Bring_It_Together/docker-compose.yaml'
+            dockerComposeCommand: 'up --exit-code-from integration'
+            abortOnContainerExit: true
+
+        - task: PublishTestResults@2
+          displayName: 'Publish Test Results'
+          inputs:
+            testResultsFiles: '**/test-results.xml'
+          condition: succeededOrFailed()
