@@ -4,7 +4,8 @@
   "description": "Using Docker compose to run tests and dependencies together demonstration",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit **/*.spec.js"
+    "test": "mocha --exit **/*.spec.js",
+    "ci": "mocha --exit **/*.spec.js --reporter mocha-junit-reporter --reporter-options mochaFile=/results/mocha/test-results.xml"
   },
   "author": "Andrew Crumpler",
   "license": "MIT",
