@@ -6,7 +6,7 @@ steps:
 - task: DockerCompose@0
   displayName: Run Tests with Docker DockerCompose@0
   inputs:
-    dockerComposeFile: '3_Using_Compose_To_Bring_It_Together/docker-compose.yaml'
+    dockerComposeFile: '4_Using_Compose_To_Bring_It_Together/docker-compose.yaml'
     dockerComposeCommand: 'up --exit-code-from integration'
     abortOnContainerExit: true
 
