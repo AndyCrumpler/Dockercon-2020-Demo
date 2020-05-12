@@ -1,6 +1,6 @@
 stages:
-- stage: run-tests
-  displayName: Run Integration run-tests
+- stage: run_tests
+  displayName: Run Integration Tests
   jobs:
     - job: integration_test
       displayName: Integration Tests
