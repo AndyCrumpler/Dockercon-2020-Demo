@@ -1,5 +1,5 @@
 {
-  "name": "3_using_compose_to_bring_it_together",
+  "name": "4_using_compose_to_bring_it_together",
   "version": "1.0.0",
   "description": "Using Docker compose to run tests and dependencies together demonstration",
   "main": "index.js",
